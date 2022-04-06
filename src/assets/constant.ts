@@ -34,7 +34,11 @@ export const perDeviceWidth = deviceWidth / 100;
 export const perDeviceHeight = deviceHeight / 100;
 export const isAndroid = Platform.OS === 'android';
 
-export enum ScreenId {
-  APP = 'APP',
-  HOME = 'HOME',
+export enum RootScreenName {
+  HOME = '홈',
+}
+
+export enum HomeScreenName {
+  WEATHER = '날씨',
+  TODO = '투두',
 }
