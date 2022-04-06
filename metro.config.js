@@ -4,7 +4,6 @@ module.exports = (async () => {
   const {
     resolver: {sourceExts, assetExts},
   } = await getDefaultConfig();
-  console.log('sourceExts, assetExts', sourceExts, assetExts);
   return {
     transformer: {
       getTransformOptions: async () => ({

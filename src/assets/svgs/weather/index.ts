@@ -12,3 +12,4 @@ export {default as RainIcon} from './rain.svg';
 export {default as SnowIcon} from './snow.svg';
 export {default as SunnyIcon} from './sunny.svg';
 export {default as WindyIcon} from './windy.svg';
+export {default as UmbrellaIcon} from './umbrella.svg';
