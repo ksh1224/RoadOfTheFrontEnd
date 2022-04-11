@@ -28,16 +28,26 @@ export const notoSansKrRegular = 'NotoSansKR-Regular';
 export const notoSansKrThin = 'NotoSansKR-Thin';
 export const notoSansKrLight = 'NotoSansKR-Light';
 
+// Device Layout
 export const deviceHeight = Dimensions.get('window').height;
 export const deviceWidth = Dimensions.get('window').width;
 export const perDeviceWidth = deviceWidth / 100;
 export const perDeviceHeight = deviceHeight / 100;
 export const isAndroid = Platform.OS === 'android';
 
+/**
+ * * Root Navigation Screen Name Definition
+ */
 export enum RootScreenName {
   HOME = '홈',
+  LOCATION_SELECT_MODAL = '지역선택',
+  TODO_DETAIL = '투두상세',
+  TODO_WRITE_MODAL = '투두작성/수정',
 }
 
+/**
+ * * Home Navigation Screen Name Definition
+ */
 export enum HomeScreenName {
   WEATHER = '날씨',
   TODO = '투두',
