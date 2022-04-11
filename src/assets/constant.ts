@@ -18,9 +18,11 @@ export const red = '#F24147';
 export const blue = '#007AFF';
 export const yellow = '#F8CF3E';
 
+// Brand Colors
 export const kakaoColor = '#FFDE00';
 export const naverColor = '#58B93E';
 
+// NotoSans Kr Font
 export const notoSansKrBlack = 'NotoSansKR-Black';
 export const notoSansKrBold = 'NotoSansKR-Bold';
 export const notoSansKrMedium = 'NotoSansKR-Medium';
