@@ -13,7 +13,7 @@ import {ColorValue, Text, TextProps, TextStyle} from 'react-native';
 export type TFontType = 'notoSans';
 
 interface IProps extends TextProps {
-  size?: number;
+  fontSize?: number;
   color?: ColorValue;
   fontType?: TFontType;
   align?: TTextAlign;
@@ -30,10 +30,18 @@ interface IProps extends TextProps {
     | 'normal';
 }
 
+/**
+ * @param fontSize 폰트 사이즈
+ * @param color 텍스트 컬러
+ * @param fontType 폰트 형태
+ * @param align 텍스트 좌우 배치
+ * @param lineHeight 텍스트 높이
+ * @param weight 텍스트 굵기
+ */
 export default function FontText(props: IProps) {
   const {
     children,
-    size = 14,
+    fontSize = 14,
     color = black,
     style,
     fontType = 'notoSans',
@@ -81,8 +89,8 @@ export default function FontText(props: IProps) {
 
   const textStyles: TextStyle = {
     fontFamily,
-    lineHeight: lineHeight || size * 1.2,
-    fontSize: size,
+    lineHeight: lineHeight || fontSize * 1.2,
+    fontSize,
     color: color,
     textAlign: align,
   };
