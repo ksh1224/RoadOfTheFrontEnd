@@ -79,7 +79,7 @@ $ yarn ios
 2. **WeatherScreen**에 현재 날씨 포함 3일 후 날씨까지(데이터 없으면 현재만 표시) 보여주고 오늘 시간 별 날씨 리스트 보여줌(디자인은 자유)
 3. **WeatherScreen**에서 아무 것도 선택 안했을 때 처음에 현재 위치 가지고와서 날씨 정보 보여줌
 4. **WeatherScreen**에서 헤더에 지역 정보 클릭 시 **LocationSelectModalScreen**로 이동
-5. **LocationSelectModalScreen**에 지역 검색 기능 필요(src/assets/koreanLocation.json 사용)
+5. **LocationSelectModalScreen**에 지역 검색 기능 필요(**src/assets/json/koreanLocation.json** 사용)
 6. **LocationSelectModalScreen**에서 검색한 지역 선택 시 닫히고 **WeatherScreen**에 선택한 지역 날씨 정보 표시
 
 ## Mission Reference
