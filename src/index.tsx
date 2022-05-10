@@ -2,6 +2,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {RootNavigation} from 'components/navigation';
 import React, {useEffect} from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { RecoilRoot } from 'recoil';
 import {permissionRequestAll} from 'utils/permissionUtil';
 
 const App = () => {
@@ -10,11 +11,13 @@ const App = () => {
     permissionRequestAll();
   }, []);
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <RootNavigation />
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <RecoilRoot>
+      <SafeAreaProvider>
+        <NavigationContainer>
+          <RootNavigation />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </RecoilRoot>
   );
 };
 
