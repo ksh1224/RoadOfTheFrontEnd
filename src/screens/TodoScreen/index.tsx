@@ -1,7 +1,7 @@
 import {FontText} from 'components/element';
 import {Header, ScreenContainer} from 'components/layout';
 import React from 'react';
-import {Button, ScrollView, StyleSheet, View, Switch, TouchableHighlight} from 'react-native';
+import {Button, ScrollView, StyleSheet, View, Switch, TouchableOpacity} from 'react-native';
 import {RootScreenName} from 'assets/constant';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import { todosState, filteredTodosState, ITodo } from '../../state';
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
 
 export default function TodoScreen(props: any) {
   const [ todos, setTodos ] = useRecoilState<ITodo[]>(todosState);
-  // const filteredTodos = useRecoilValue<ITodo[]>(filteredTodosState);
+  const filteredTodos = useRecoilValue<ITodo[]>(filteredTodosState);
 
   function openModal() {
     props.navigation.push(RootScreenName.TODO_WRITE_MODAL);
@@ -61,16 +61,16 @@ export default function TodoScreen(props: any) {
         <FontText>투두</FontText>
       </Header>
       <ScrollView style={styles.body}>
-        {todos.map((todo) => {
+        {filteredTodos.map((todo) => {
           return (
             <View
               style={styles.todo}
               key={todo.id}
             >
               <View style={styles.titleContainer}>
-                <TouchableHighlight onPress={() => goDetail(todo.id)} style={{flex: 1}}>
+                <TouchableOpacity onPress={() => goDetail(todo.id)} style={{flex: 1}}>
                   <FontText style={todo.isComplete ? styles.completeTitle : styles.title}>{todo.title}</FontText>
-                </TouchableHighlight>
+                </TouchableOpacity>
                 <Switch
                   onValueChange={(value) => toggleComplete(todo.id, value)}
                   value={todo.isComplete}
