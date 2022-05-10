@@ -1,6 +1,7 @@
 import {NavigationContainer} from '@react-navigation/native';
+import { FontText } from 'components/element';
 import {RootNavigation} from 'components/navigation';
-import React, {useEffect} from 'react';
+import React, {Suspense, useEffect} from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import { RecoilRoot } from 'recoil';
 import {permissionRequestAll} from 'utils/permissionUtil';
@@ -14,7 +15,9 @@ const App = () => {
     <RecoilRoot>
       <SafeAreaProvider>
         <NavigationContainer>
-          <RootNavigation />
+          <Suspense fallback={<FontText>Loading...</FontText>}>
+            <RootNavigation />
+          </Suspense>
         </NavigationContainer>
       </SafeAreaProvider>
     </RecoilRoot>
