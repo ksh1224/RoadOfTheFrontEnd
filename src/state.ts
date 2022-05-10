@@ -1,4 +1,4 @@
-import {atom} from 'recoil';
+import {atom, selector, AtomEffect, DefaultValue} from 'recoil';
 
 export interface ITodo {
     id: number;
@@ -10,5 +10,14 @@ export interface ITodo {
   
 export const todosState = atom<ITodo[]>({
     key: 'todosState',
-    default: []
+    default: [],
+});
+
+export const filteredTodosState = selector<ITodo[]>({
+    key: 'filteredTodosState',
+    get: ({get}) => {
+        const todos = get(todosState);
+        const filteredTodos = todos.filter(todo => !todo.isDelete);
+        return filteredTodos;
+    },
 });
